@@ -53,5 +53,61 @@ app.post("/generate-from-image", upload.single("image"), async (req, res) => {
   }
 });
 
+app.post(
+  "/generate-from-document",
+  upload.single("document"),
+  async (req, res) => {
+    const { prompt } = req.body;
+    const base64Document = req.file.buffer.toString("base64");
+    try {
+      const response = await ai.models.generateContent({
+        model: GEMINI_MODEL,
+        contents: [
+          {
+            text: prompt ?? "Tolong buatkan ringkasan dari dokumen ini",
+            type: "text",
+          },
+          {
+            inlineData: {
+              data: base64Document,
+              mimeType: req.file.mimetype,
+            },
+          },
+        ],
+      });
+      res.status(200).json({ result: response.text });
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ message: err.message });
+    }
+  },
+);
+
+app.post("/generate-from-audio", upload.single("audio"), async (req, res) => {
+  const { prompt } = req.body;
+  const base64Audio = req.file.buffer.toString("base64");
+  try {
+    const response = await ai.models.generateContent({
+      model: GEMINI_MODEL,
+      contents: [
+        {
+          text: prompt ?? "Tolong buatkan ringkasan dari audio ini",
+          type: "text",
+        },
+        {
+          inlineData: {
+            data: base64Audio,
+            mimeType: req.file.mimetype,
+          },
+        },
+      ],
+    });
+    res.status(200).json({ result: response.text });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: err.message });
+  }
+});
+
 const PORT = 3000;
 app.listen(PORT, () => console.log(`Server ready on http://localhost:${PORT}`));
