@@ -1,6 +1,7 @@
 import "dotenv/config";
 import express from "express";
 import multer from "multer";
+import cors from "cors";
 import { GoogleGenAI } from "@google/genai";
 
 const app = express();
@@ -11,6 +12,7 @@ const ai = new GoogleGenAI({
 
 const GEMINI_MODEL = "gemini-3.5-flash-lite";
 
+app.use(cors());
 app.use(express.json());
 
 app.post("/generate-text", async (req, res) => {
@@ -103,6 +105,36 @@ app.post("/generate-from-audio", upload.single("audio"), async (req, res) => {
       ],
     });
     res.status(200).json({ result: response.text });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: err.message });
+  }
+});
+
+
+app.post("/api/chat", async (req, res) => {
+  const { conversation } = req.body;
+
+  try {
+    if (!Array.isArray(conversation)) {
+      throw new Error('Messages muust be an array');
+    }
+    const contents = conversation.map(({ role, text }) => ({
+      role,
+      parts: [{ text }]
+    }));
+
+    const response = await ai.models.generateContent({
+      model: GEMINI_MODEL,
+      contents,
+      config: {
+        temperature: 0.2,
+        systemInstruction: "Jawab hanya menggunakan bahasa Indonesia."
+      }
+    });
+
+    res.status(200).json({ result: response.text });
+
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: err.message });
