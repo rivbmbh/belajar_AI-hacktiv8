@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Curhat Bareng Tia AI - Teman Cerita Setia & Empatis 24/7</title>
+
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Marked.js for Markdown parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- Navbar Navigation -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <div class="brand-icon">
+          <i class="fa-solid fa-heart-pulse"></i>
+        </div>
+        <span class="brand-name">Curhat Bareng <strong>Tia AI</strong></span>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="#hero" class="nav-link">Beranda</a>
+        <a href="#features" class="nav-link">Kenapa Tia?</a>
+        <a href="#profile-section" class="nav-link">Data Diri</a>
+        <a href="#contact" class="nav-link">Kontak</a>
+      </nav>
+
+      <button id="open-chat-nav-btn" class="btn btn-primary nav-cta">
+        <i class="fa-solid fa-comments"></i>
+        <span>Chat Tia Sekarang</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <i class="fa-solid fa-sparkles"></i>
+            <span>Teman Cerita Setia & Tanpa Judgement 24/7</span>
+          </div>
+
+          <h1 class="hero-title">
+            Punya Banyak Ganjalan di Hati? <br>
+            <span>Yuk, Curhat Bareng Tia AI!</span>
+          </h1>
+
+          <p class="hero-description">
+            Nggak usah dipendem sendiri. Di sini kamu bebas tumpahin semua cerita, keluh kesah, atau masalah sehari-hari. 
+            Tia siap nampung cerita kamu kapan aja dengan respon yang hangat, suportif, dan rahasia 100% aman!
+          </p>
+
+          <div class="hero-actions">
+            <button id="hero-start-chat-btn" class="btn btn-primary btn-lg">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span>Mulai Curhat Gratis</span>
+            </button>
+            <a href="#profile-section" class="btn btn-secondary btn-lg">
+              <i class="fa-solid fa-user-plus"></i>
+              <span>Kenalan Dulu Yuk</span>
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Bebas Menghakimi</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number">24/7</span>
+              <span class="stat-label">Selalu Standby</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number">Aman</span>
+              <span class="stat-label">Privasi Terjaga</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Imaginary Carousel -->
+        <div class="hero-carousel-wrapper">
+          <div class="carousel-container">
+            <div class="carousel-slides" id="carousel-slides">
+              
+              <!-- Slide 1 -->
+              <div class="carousel-slide active">
+                <div class="slide-image-box">
+                  <img src="assets/hero1.jpg" alt="Tia AI listening companion" />
+                </div>
+                <div class="slide-caption">
+                  <p class="quote-text">"Tia beneran bikin ngerasa didengerin banget. Bebas cerita tentang rasa capek kuliah tanpa takut dibilang lebay!"</p>
+                  <span class="quote-user">- Anindya, 21 thn (Mahasiswi Overthinker)</span>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="carousel-slide">
+                <div class="slide-image-box">
+                  <img src="assets/hero2.jpg" alt="Relieved person chatting with Tia AI" />
+                </div>
+                <div class="slide-caption">
+                  <p class="quote-text">"Pas lagi penat abis kerja lembur malam-malam, nemu Tia berasa nemu temen sejati. Bikin pikiran plong!"</p>
+                  <span class="quote-user">- Dimas, 25 thn (Karyawan Swasta)</span>
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="carousel-slide">
+                <div class="slide-image-box">
+                  <img src="assets/hero3.jpg" alt="Cozy late night listening session" />
+                </div>
+                <div class="slide-caption">
+                  <p class="quote-text">"Suka banget sama balasan Tia yang super ramah, penyabar, dan ngasih sudut pandang positif buat hati yang lagi galau."</p>
+                  <span class="quote-user">- Clarissa, 23 thn (Fresh Graduate)</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Carousel Controls -->
+            <button class="carousel-btn prev" id="carousel-prev" aria-label="Slide sebelumnya">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button class="carousel-btn next" id="carousel-next" aria-label="Slide berikutnya">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
+            <!-- Carousel Indicators -->
+            <div class="carousel-dots" id="carousel-dots">
+              <span class="dot active" data-slide="0"></span>
+              <span class="dot" data-slide="1"></span>
+              <span class="dot" data-slide="2"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+      <div class="section-container">
+        <div class="section-header text-center">
+          <span class="section-subtitle">Kenapa Harus Tia?</span>
+          <h2 class="section-title">Alasan Kenapa Curhat Bareng Tia Itu Nyaman Banget</h2>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fa-solid fa-shield-heart"></i>
+            </div>
+            <h3>100% Bebas Judgement</h3>
+            <p>Tia bakal mendengarkan semua cerita kamu tanpa pernah menghakimi, menyalahkan, atau membandingkan hidupmu dengan orang lain.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fa-solid fa-clock-rotate-left"></i>
+            </div>
+            <h3>Standby 24 Jam Nonstop</h3>
+            <p>Tiba-tiba kebangun jam 2 pagi dan pikiran penuh? Tia selalu ada dan siap nemenin kamu kapan aja kamu butuh teman obrol.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fa-solid fa-user-shield"></i>
+            </div>
+            <h3>Privasi Rahasia Terjaga</h3>
+            <p>Semua percakapan kamu dijamin rahasia dan aman. Nggak bakal ada orang lain yang bisa ngebaca isi curhatan kamu.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fa-solid fa-face-smile-beam"></i>
+            </div>
+            <h3>Respon Empatis & Warm</h3>
+            <p>Tia dirancang khusus buat memberikan kehangatan, dukungan emosional, dan saran positif yang bikin perasaanmu lebih tenang.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Form Section: Info Data Diri Pengunjung -->
+    <section id="profile-section" class="profile-section">
+      <div class="section-container">
+        <div class="profile-card-wrapper">
+          <div class="profile-header text-center">
+            <div class="profile-badge">
+              <i class="fa-solid fa-id-card"></i>
+              <span>Kenalan Dulu Yuk!</span>
+            </div>
+            <h2>Isi Info Diri Agar Tia Mengenalmu Lebih Dekat</h2>
+            <p>Biar obrolannya nyambung dan tidak kaku, yuk kasih tahu Tia sedikit info tentang dirimu!</p>
+          </div>
+
+          <form id="landing-profile-form" class="profile-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="input-nama">
+                  <i class="fa-solid fa-user"></i> Nama Panggilan
+                </label>
+                <input type="text" id="input-nama" placeholder="Misal: Rian / Sarah" required autocomplete="off" />
+              </div>
+
+              <div class="form-group">
+                <label for="input-gender">
+                  <i class="fa-solid fa-venus-mars"></i> Jenis Kelamin
+                </label>
+                <select id="input-gender" required>
+                  <option value="" disabled selected>Pilih Jenis Kelamin</option>
+                  <option value="Perempuan">Perempuan</option>
+                  <option value="Laki-laki">Laki-laki</option>
+                  <option value="Rahasia">Rahasia / Lainnya</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="input-umur">
+                  <i class="fa-solid fa-cake-candles"></i> Umur (Opsional)
+                </label>
+                <input type="number" id="input-umur" placeholder="Misal: 22" min="10" max="100" />
+              </div>
+
+              <div class="form-group">
+                <label for="input-status">
+                  <i class="fa-solid fa-heart-pulse"></i> Status / Kondisi Saat Ini
+                </label>
+                <select id="input-status" required>
+                  <option value="" disabled selected>Pilih Status Kamu</option>
+                  <option value="Pelajar / Mahasiswa">Pelajar / Mahasiswa</option>
+                  <option value="Bekerja / Karyawan">Bekerja / Karyawan</option>
+                  <option value="Single Happy">Single Happy</option>
+                  <option value="Dalam Hubungan (Pacaran)">Dalam Hubungan (Pacaran)</option>
+                  <option value="Menikah">Menikah</option>
+                  <option value="Overthinker & Butuh Teman">Overthinker & Butuh Teman</option>
+                  <option value="Lainnya">Lainnya</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-submit-wrapper">
+              <button type="submit" class="btn btn-primary btn-block btn-lg">
+                <i class="fa-solid fa-floppy-disk"></i>
+                <span>Simpan Data & Mulai Sapa Tia AI</span>
+              </button>
+            </div>
+
+            <div id="profile-saved-banner" class="profile-saved-banner hidden">
+              <i class="fa-solid fa-circle-check"></i>
+              <span id="saved-banner-text">Data diri kamu sudah tersimpan! Klik tombol chat di kanan bawah untuk mulai cerita.</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="contact-section">
+      <div class="section-container">
+        <div class="section-header text-center">
+          <span class="section-subtitle">Tia Ada di Mana Saja!</span>
+          <h2 class="section-title">Hubungi & Ikuti Komunitas Tia</h2>
+        </div>
+
+        <div class="contact-grid">
+          <a href="https://instagram.com" target="_blank" class="contact-card">
+            <div class="contact-icon">
+              <i class="fa-brands fa-instagram"></i>
+            </div>
+            <h3>Instagram</h3>
+            <p>@curhatbarengtia</p>
+            <span class="contact-link-text">Ikuti Update & Affirmasi Harian <i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+
+          <a href="https://whatsapp.com" target="_blank" class="contact-card">
+            <div class="contact-icon">
+              <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            <h3>WhatsApp Community</h3>
+            <p>+62 812-CURHAT-TIA</p>
+            <span class="contact-link-text">Gabung Grup Teman Curhat <i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+
+          <a href="mailto:halo@curhat-tia.ai" class="contact-card">
+            <div class="contact-icon">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <h3>Email Layanan</h3>
+            <p>halo@curhat-tia.ai</p>
+            <span class="contact-link-text">Kirim Kritik & Saran <i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-heart-pulse"></i>
+        </div>
+        <span>Curhat Bareng Tia AI</span>
+      </div>
+      <p class="footer-text">Dibuat dengan kehangatan ❤️ untuk senantiasa mendengarkanmu setiap waktu.</p>
+      <p class="footer-copy">&copy; 2026 Curhat Bareng Tia AI. Hak Cipta Dilindungi.</p>
+    </div>
+  </footer>
+
+  <!-- Floating Chatbot Box Widget -->
+  <div id="floating-chat-widget" class="floating-chat-widget">
+    <!-- Floating Trigger Button -->
+    <button id="chat-toggle-btn" class="chat-toggle-btn" title="Buka / Tutup Chat Tia AI" aria-label="Buka Chat Tia AI">
+      <i class="fa-solid fa-comments open-icon"></i>
+      <i class="fa-solid fa-xmark close-icon hidden"></i>
+      <span class="toggle-badge">Curhat Yuk!</span>
+    </button>
+
+    <!-- Floating Chat Window -->
+    <div id="chat-container" class="chat-container hidden">
+      <!-- Chat Header -->
+      <header class="chat-header">
+        <div class="header-info">
+          <div class="avatar-header">
+            <i class="fa-solid fa-robot"></i>
+          </div>
+          <div class="header-text">
+            <h2>Tia AI <span class="status-badge"><span class="status-dot"></span> Online</span></h2>
+            <p class="header-subtext" id="header-user-greeting">Teman Cerita Setiamu</p>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <button id="edit-profile-btn" class="icon-btn" title="Ubah Info Data Diri">
+            <i class="fa-solid fa-user-pen"></i>
+          </button>
+          <button id="clear-btn" class="icon-btn danger" title="Hapus Riwayat Chat">
+            <i class="fa-solid fa-trash-can"></i>
+          </button>
+          <button id="close-chat-btn" class="icon-btn" title="Tutup Chat">
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+        </div>
+      </header>
+
+      <!-- Pre-Chat Profile Guard Form Overlay (if profile not set) -->
+      <div id="chat-profile-guard" class="chat-profile-guard hidden">
+        <div class="guard-content">
+          <div class="guard-icon">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+          </div>
+          <h3>Kenalan Dulu dengan Tia Yuk!</h3>
+          <p>Sebelum mulai cerita, isi nama & info singkatmu biar Tia bisa nyapa kamu dengan hangat & mengerti kondisimu!</p>
+
+          <form id="quick-profile-form" class="quick-profile-form">
+            <div class="quick-form-group">
+              <label for="quick-nama">Nama Panggilan *</label>
+              <input type="text" id="quick-nama" placeholder="Contoh: Budi / Clarissa" required autocomplete="off" />
+            </div>
+
+            <div class="quick-form-group">
+              <label for="quick-gender">Jenis Kelamin *</label>
+              <select id="quick-gender" required>
+                <option value="" disabled selected>Pilih Jenis Kelamin</option>
+                <option value="Perempuan">Perempuan</option>
+                <option value="Laki-laki">Laki-laki</option>
+                <option value="Rahasia">Rahasia</option>
+              </select>
+            </div>
+
+            <div class="quick-form-group">
+              <label for="quick-umur">Umur (Opsional)</label>
+              <input type="number" id="quick-umur" placeholder="Misal: 22" min="10" max="100" />
+            </div>
+
+            <div class="quick-form-group">
+              <label for="quick-status">Status / Kondisi Saat Ini *</label>
+              <select id="quick-status" required>
+                <option value="" disabled selected>Pilih Status Kamu</option>
+                <option value="Pelajar / Mahasiswa">Pelajar / Mahasiswa</option>
+                <option value="Bekerja / Karyawan">Bekerja / Karyawan</option>
+                <option value="Single Happy">Single Happy</option>
+                <option value="Dalam Hubungan (Pacaran)">Dalam Hubungan (Pacaran)</option>
+                <option value="Menikah">Menikah</option>
+                <option value="Overthinker & Butuh Teman">Overthinker & Butuh Teman</option>
+                <option value="Lainnya">Lainnya</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">
+              <i class="fa-solid fa-comments"></i>
+              <span>Mulai Percakapan ✨</span>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Chat Messages Box -->
+      <div id="chat-box" class="chat-box">
+        <!-- Messages loaded dynamically -->
+      </div>
+
+      <!-- Input Form -->
+      <form id="chat-form" class="chat-input-form">
+        <input type="text" id="user-input" placeholder="Tulis cerita atau isi hatimu di sini..." autocomplete="off" required />
+        <button type="submit" id="send-btn" title="Kirim Pesan">
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
